@@ -1,0 +1,52 @@
+.notificationButton {
+  position: relative;
+}
+
+.bellIcon {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.unreadBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 9999px;
+  background-color: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+  font-size: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notificationContent {
+  width: 20rem;
+}
+
+.notificationTitle {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.notificationList {
+  max-height: 20rem;
+  overflow-y: auto;
+}
+
+.notificationItem {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.unread {
+  background-color: hsl(var(--accent));
+}
+
+.read {
+  background-color: hsl(var(--transaction-color));
+}
+

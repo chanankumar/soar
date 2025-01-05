@@ -1,0 +1,219 @@
+.dashboardContainer {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--background);
+  }
+  
+  .dashboardContent {
+    flex: 1;
+  }
+  
+  .dashboardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: var(--transaction-color);
+    padding: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .dashboardHeader {
+      padding: 2rem;
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      background-color: var(--transaction-color);
+    }
+  }
+
+  
+  .searchForm {
+    position: relative;
+    flex: 1;
+    max-width: 24rem;
+  }
+  
+  .searchIcon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted-foreground);
+    height: 1rem;
+    width: 1rem;
+    z-index: 10;
+    color : #8BA3CB;
+  }
+  
+  .searchInput::placeholder {
+    color: #8BA3CB;
+  }
+  .searchInput:focus {
+    border-color: #5e7eff;
+  }
+  
+  .searchInput {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    width: 100%;
+    background-color: #F5F7FA;
+    border-radius: 40px;
+  }
+  
+  .searchFormTitle {
+    position: absolute;
+    left: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .clearButton {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .headerActions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .dashboardHeader {
+      justify-content: center;
+    }
+  }
+  
+  .avatar {
+    transition: transform 0.2s;
+  }
+  
+  .avatar:hover {
+    transform: scale(1.1);
+  }
+  
+  .dashboardGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding : 1rem;
+  }
+  
+  @media (min-width: 1240px) {
+    .dashboardGrid {
+      grid-template-columns: 1fr 1fr;
+      padding: 2rem;
+      padding-top: 0.8rem;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .cardsSection {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .cardsContainer {
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    padding-bottom: 1rem;
+    padding-top: 0px;
+    width: 100%;
+    height: 280px;
+  }
+  
+  .cardsContainer > * {
+    flex: 0 0 auto;
+    width: 300px !important;
+  }
+  
+  .cardsSkeleton {
+    height: 12rem;
+    width: 100%;
+    max-width: 18rem;
+    border-radius: 0.75rem;
+  }
+  
+  .transactionsSkeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .transactionSkeleton {
+    height: 5rem;
+    width: 100%;
+    background-color: #ffffff;
+  }
+  
+  .transactionsSection {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+  
+  @media (min-width: 768px) {
+    .transactionsSection {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+  }
+  
+  .chartsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left : 20px;
+    margin-right : 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .chartsGrid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .chartSkeleton {
+    height: 18.75rem;
+  }
+  
+  .bottomGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin : 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .bottomGrid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .bottomSkeleton {
+    height: 12.5rem;
+  }
+  
+  
