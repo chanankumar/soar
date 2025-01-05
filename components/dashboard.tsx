@@ -3,11 +3,11 @@ import { Search, Bell } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
-import { Sidebar } from './components/sidebar'
-import { CreditCard } from './components/credit-card'
-import { WeeklyActivity } from './components/weekly-activity'
-import { ExpenseStatistics } from './components/expense-statistics'
-import { QuickTransfer } from './components/quick-transfer'
+import { Sidebar } from './sidebar'
+import { CreditCard } from './credit-card'
+import { WeeklyActivity } from './weekly-activity'
+import { ExpenseStatistics } from './expense-statistics'
+import { QuickTransfer } from './quick-transfer'
 
 export default function Dashboard() {
   return (
@@ -38,8 +38,7 @@ export default function Dashboard() {
                 balance={5756}
                 cardHolder="Jordan Blake"
                 cardNumber="3778 **** **** 1234"
-                expiryDate="12/22"
-              />
+                expiryDate="12/22" id={0} cardType={''}              />
             </div>
           </div>
           <div>
@@ -54,8 +53,17 @@ export default function Dashboard() {
         </div>
 
         <div className="grid grid-cols-2 gap-6 mb-6">
-          <WeeklyActivity />
-          <ExpenseStatistics />
+          <WeeklyActivity data={{
+            labels: [],
+            deposits: [],
+            withdrawals: []
+          }} />
+          <ExpenseStatistics data={{
+            entertainment: 0,
+            investment: 0,
+            groceries: 0,
+            others: 0
+          }} />
         </div>
 
         <div className="grid grid-cols-2 gap-6">

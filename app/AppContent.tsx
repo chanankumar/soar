@@ -19,7 +19,7 @@ export default function AppContent() {
 
   return (
     <div className="flex min-h-screen bg-background">
-      <Sidebar activePath={location.pathname} onNavigate={handleNavigate} />
+      <Sidebar />
       <main className="flex-1">
         <Routes>
           <Route path="/dashboard" element={<DashboardPage />} />

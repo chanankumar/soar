@@ -71,7 +71,7 @@ export function Sidebar() {
           </svg>
           <span className="font-semibold">Soar Task</span>
         </div>
-        <SidebarItem icon={Home} label="Dashboard" href="/" isActive />
+        <SidebarItem icon={Home} label="Dashboard" href="/" />
         <SidebarItem icon={Receipt} label="Transactions" href="/transactions" />
         <SidebarItem icon={Users} label="Accounts" href="/accounts" />
         <SidebarItem icon={LineChart} label="Investments" href="/investments" />

@@ -81,7 +81,7 @@ export function Header() {
                   <Settings className="h-5 w-5" />
                 </Button>
               </Link>
-              <Notifications />
+              <Notifications notifications={[]} />
               <Avatar className={styles.avatar + " toggle-background-color"}>
                 <AvatarImage src="/images/image10.jpg" alt="User avatar" />
                 <AvatarFallback>EC</AvatarFallback>
