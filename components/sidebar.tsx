@@ -1,27 +1,31 @@
 "use client"
 
-import { Home, Receipt, Users, LineChart, CreditCard, Landmark, Settings, Shield, Star, Menu } from 'lucide-react'
+import React from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { Home, Receipt, Users, LineChart, CreditCard, Landmark, Settings, Shield, Star, Menu } from 'lucide-react'
+import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 interface SidebarItemProps {
   icon: React.ComponentType<{ className?: string }>
   label: string
   href: string
   disabled?: boolean
+  isActive?: boolean
 }
 
-function SidebarItem({ icon: Icon, label, href, disabled }: SidebarItemProps) {
+function SidebarItem({ icon: Icon, label, href, disabled, isActive }: SidebarItemProps) {
   return (
     <Link href={disabled ? '#' : href} className='sidebar-menu'>
       <Button
         variant="ghost"
         className={cn(
           "w-full justify-start gap-2",
-          disabled && "opacity-30 cursor-not-allowed"
+          disabled && "opacity-30 cursor-not-allowed",
+          isActive && "bg-accent text-accent-foreground"
         )}
         disabled={disabled}
       >
@@ -33,6 +37,20 @@ function SidebarItem({ icon: Icon, label, href, disabled }: SidebarItemProps) {
 }
 
 export function Sidebar() {
+  const pathname = usePathname()
+
+  const sidebarItems = [
+    { icon: Home, label: "Dashboard", href: "/dashboard" },
+    { icon: Receipt, label: "Transactions", href: "/transactions" },
+    { icon: Users, label: "Accounts", href: "/accounts" },
+    { icon: LineChart, label: "Investments", href: "/investments" },
+    { icon: CreditCard, label: "Credit Cards", href: "/cards" },
+    { icon: Landmark, label: "Loans", href: "/loans" },
+    { icon: Star, label: "Services", href: "/services", disabled: true },
+    { icon: Shield, label: "My Privileges", href: "/privileges", disabled: true },
+    { icon: Settings, label: "Setting", href: "/settings" },
+  ]
+
   return (
     <>
       {/* Mobile Menu */}
@@ -50,15 +68,16 @@ export function Sidebar() {
               </svg>
               <span className="font-semibold">Soar Task</span>
             </div>
-            <SidebarItem icon={Home} label="Dashboard" href="/" />
-            <SidebarItem icon={Receipt} label="Transactions" href="/transactions" />
-            <SidebarItem icon={Users} label="Accounts" href="/accounts" />
-            <SidebarItem icon={LineChart} label="Investments" href="/investments" />
-            <SidebarItem icon={CreditCard} label="Credit Cards" href="/cards" />
-            <SidebarItem icon={Landmark} label="Loans" href="/loans" />
-            <SidebarItem icon={Star} label="Services" href="/services" disabled />
-            <SidebarItem icon={Shield} label="My Privileges" href="/privileges" disabled />
-            <SidebarItem icon={Settings} label="Setting" href="/settings" />
+            {sidebarItems.map((item) => (
+              <SidebarItem
+                key={item.href}
+                icon={item.icon}
+                label={item.label}
+                href={item.href}
+                disabled={item.disabled}
+                isActive={pathname === item.href}
+              />
+            ))}
           </div>
         </SheetContent>
       </Sheet>
@@ -71,15 +90,16 @@ export function Sidebar() {
           </svg>
           <span className="font-semibold">Soar Task</span>
         </div>
-        <SidebarItem icon={Home} label="Dashboard" href="/" />
-        <SidebarItem icon={Receipt} label="Transactions" href="/transactions" />
-        <SidebarItem icon={Users} label="Accounts" href="/accounts" />
-        <SidebarItem icon={LineChart} label="Investments" href="/investments" />
-        <SidebarItem icon={CreditCard} label="Credit Cards" href="/cards" />
-        <SidebarItem icon={Landmark} label="Loans" href="/loans" />
-        <SidebarItem icon={Star} label="Services" href="/services" disabled />
-        <SidebarItem icon={Shield} label="My Privileges" href="/privileges" disabled />
-        <SidebarItem icon={Settings} label="Setting" href="/settings" />
+        {sidebarItems.map((item) => (
+          <SidebarItem
+            key={item.href}
+            icon={item.icon}
+            label={item.label}
+            href={item.href}
+            disabled={item.disabled}
+            isActive={pathname === item.href}
+          />
+        ))}
       </div>
     </>
   )
