@@ -18,9 +18,6 @@ interface LoansProps {
 export function Loans({ loans }: LoansProps) {
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>My Loans</CardTitle>
-      </CardHeader>
       <CardContent>
         <div className="space-y-6">
           {loans.map((loan) => (

@@ -14,9 +14,6 @@ interface AccountsProps {
 export function Accounts({ accounts }: AccountsProps) {
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>My Accounts</CardTitle>
-      </CardHeader>
       <CardContent>
         <div className="space-y-4">
           {accounts.map((account) => (

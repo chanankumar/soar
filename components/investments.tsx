@@ -29,9 +29,6 @@ export function Investments({ investments }: InvestmentsProps) {
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>My Investments</CardTitle>
-      </CardHeader>
       <CardContent>
         <div className="space-y-4">
           {investments.map((investment) => (
