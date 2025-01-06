@@ -83,7 +83,13 @@ export function Header() {
                   <Settings className="h-5 w-5" />
                 </Button>
               </Link>
-              <Notifications notifications={[]} />
+              <Notifications notifications={[
+                { id: 1, message: "Your card payment of $120 to Netflix was successful", read: false },
+                { id: 2, message: "You received a PayPal payment of $800", read: false },
+                { id: 3, message: "Your bank account balance is below $1000", read: true },
+                { id: 4, message: "New login detected from Chrome browser", read: true },
+                { id: 5, message: "Your weekly spending report is ready", read: false }
+              ]} />
               <Avatar className={styles.avatar + " toggle-background-color"}>
                 <AvatarImage src="/images/image10.jpg" alt="User avatar" />
                 <AvatarFallback>EC</AvatarFallback>
