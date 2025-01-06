@@ -85,7 +85,7 @@ export default function SettingsPage() {
                     <div className="relative">
                       <Avatar className="w-24 h-24">
                         <AvatarImage src={profile.avatar} />
-                        <AvatarFallback>CN</AvatarFallback>
+                        <AvatarFallback>JB</AvatarFallback>
                       </Avatar>
                       <Button 
                         size="icon" 
