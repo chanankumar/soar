@@ -211,8 +211,8 @@ export default function SettingsPage() {
                       />
                     </div>
 
-                    <div className="md:col-span-2 flex justify-end">
-                      <Button type="submit" className="w-full md:w-40">
+                    <div className=" md:col-span-2 flex justify-end">
+                      <Button type="submit" className="w-full md:w-40 bg-black text-white">
                         Save
                       </Button>
                     </div>
