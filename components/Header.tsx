@@ -50,9 +50,11 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             className={styles.dashboardHeader}
           >
-            <h1 className="font-weight-bold text-color font-600 fs-3 page-title">{getPageTitle()}</h1>
+            <h1 className="font-weight-bold text-color font-600 fs-3 page-title hide-small-screen">{getPageTitle()}</h1>
             <div className={styles.headerActions}>
-            <form onSubmit={handleSearch} className={styles.searchForm + " ml-10"}>
+              <div className = "flex flex-row small-screen-container">
+            <h1 className="font-weight-bold text-color font-600 fs-3 page-title show-small-screen small-screen-overview ml-15">{getPageTitle()}</h1>
+              <form onSubmit={handleSearch} className={styles.searchForm + " ml-10 hide-small-screen"}>
               <Search className={styles.searchIcon} aria-hidden="true" />
               {/* <span className={styles.searchFormTitle}>Search:</span> */}
               <Input 
@@ -87,6 +89,30 @@ export function Header() {
                 <AvatarFallback>EC</AvatarFallback>
               </Avatar>
             </div>
+            <form onSubmit={handleSearch} className={styles.searchForm + " ml-10 show-small-screen"}>
+              <Search className={styles.searchIcon} aria-hidden="true" />
+              {/* <span className={styles.searchFormTitle}>Search:</span> */}
+              <Input 
+                className={styles.searchInput + " toggle-background-color"}
+                placeholder="Search for something" 
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                aria-label="Search dashboard"
+              />
+              {searchTerm && (
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  className={styles.clearButton}
+                  onClick={() => setSearchTerm('')}
+                  aria-label="Clear search"
+                >
+                  <X className="h-4 w-4" />
+                </Button>
+              )}
+            </form>
+          </div>
           </motion.div>
     )
 }

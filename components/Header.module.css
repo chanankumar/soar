@@ -88,6 +88,10 @@
     .dashboardHeader {
       justify-content: center;
     }
+    .headerActions { 
+      flex-direction: column;
+      width: 100%;
+    }
   }
   
   .avatar {
@@ -215,5 +219,7 @@
   .bottomSkeleton {
     height: 12.5rem;
   }
+
+
   
   

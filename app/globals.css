@@ -256,8 +256,26 @@ input[type=number] {
   display: flex;
 }
 
+.show-small-screen {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .hide-small-screen {
     display: none;
   }
+
+  .show-small-screen {
+    display: flex;
+  }
+
+  .small-screen-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.small-screen-overview{
+  align-items: center;
+  margin-left : 50px;
 }
