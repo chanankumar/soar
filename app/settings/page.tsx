@@ -62,7 +62,7 @@ export default function SettingsPage() {
   const handleAvatarChange = () => {
     // In a real application, this would open a file picker
     // and upload the new avatar. For now, we'll just use a placeholder.
-    const newAvatar = '/placeholder.svg?height=96&width=96'
+    const newAvatar = '/images/image8.jpg'
     setProfile(prev => ({ ...prev, avatar: newAvatar }))
   }
 
